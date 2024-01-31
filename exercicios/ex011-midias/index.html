@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>
+        Para fazer com que uma imagem seja dinânima, ou seja,
+        altere o tamanho de acordo coma tela, utiliza-se a tag
+        &lt;picture&gt;. E dentro dela, utiliza-se a tag &lt;source&gt;.
+        Escolha a 'source:media:type'.
+        <p><strong>Exemplo de código:</strong></p>
+        <p>
+            <p>&lt;picture&gt;</p>
+                <p>
+                    &lt;source media="(max-width: 750px)" srcset="pasta_com_imagens/nome_imagem_menor.png"
+                    type="image/png"&gt;
+                </p>
+                <p>
+                    &lt;source media="(max-width: 1050px)" srcset="pasta_com_imagens/nome_imagem_media.png"
+                    type="image/png"&gt;
+                </p>
+                <p>&lt;img src="pasta_com_imagens/nome_imagem_grande.png" alt="Imagem flexível"&gt;</p>
+            <p>&lt;/picture&gt;</p>
+        </p>
+    </p>
+    <p>
+        <strong>Observação importante:</strong>
+        <ul>
+            <li>
+                É importante que esta seja a ordem do código:
+                <ol type="1">
+                    <li>source para imagem menor</li>
+                    <li>source para imagem media</li>
+                    <li>img para imagem maior</li>
+                </ol>
+            </li>
+        </ul>
+    </p>
+    <p><strong>Funcionamento na prática:</strong></p>
+    <p>
+        Tente abrir esse site em vários dispositivos diferentes, ou 
+        simplesmente aumente e diminua o tamanho do seu navegador
+    </p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/pequena.png"
+        type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/media.png" 
+        type="image/png">
+        <img src="imagens/grande.png" alt="Imagem flexível">
+    </picture>
+    <hr>
+    <h1>Áudios</h1>
+    <h2>Primeira forma</h2>
+    <p>
+        Para reproduzir um áudio, utiliza-se a tag &lt;audio&gt;
+        <p><strong>Exemplo de código:</strong></p>
+        <p>
+            &lt;audio src="pasta_com_audio/nome_audio.mp3" controls autoplay&gt;&lt;/audio&gt;
+        </p>
+        <p><strong>Observações:</strong></p>
+        <ul>
+            <li>
+                Este formato de código só funciona para áudios nos seguintes formatos:
+                <ul>
+                    <li>MP3</li>
+                    <li>WAV</li>
+                    <li>OGG</li>
+                </ul>
+            </li>
+            <li>Os parâmetros 'controls' e 'autoplay' devem ser adicionados</li>
+            <li>O parâmetro 'controls' faz com que apareça o botão de play</li>
+            <li>O parâmetro 'autoplay' faz com que o áudio toque sozinho(nem sempre funciona)</li>
+        </ul>
+    </p>
+    <p><strong>Funcionando na prática:</strong></p>
+    <p>Reproduzindo áudio</p>
+    <audio src="audio/Born_a_Rockstar.mp3" controls autoplay></audio>
+    <h2>Segunda forma</h2>
+    <p>
+        Para reproduzir um áudio pode-se também utilizar a seguinte forma:
+        <p><strong>Exemplo de código:</strong></p>
+        <p>&lt;audio preload="metadata" controls loop&gt;</p>
+            <p>&lt;source src="pasta_com_audio/nome_audio.mp3" type="audio/mpeg"&gt;</p>
+            <p>&lt;source src="pasta_com_audio/nome_audio.ogg" type="audio/ogg"&gt;</p>
+            <p>&lt;source src="pasta_com_audio/nome_audio.formato" type="audio/formato_do_audio"&gt;</p>
+        <p>&lt;/audio&gt;</p>
+        <p><strong>Observações:</strong></p>
+        <ul type="square">
+            <li>O programa sempre irá ler de cima para baixo</li>
+            <li>
+                O formato MP3 é o único com nome diferente em relação ao type.
+                No caso, fica type="audio/mpeg"
+            </li>
+            <li>
+                Parâmetros adicionados:
+                <ul type="disc">
+                    <li>
+                        preload - Exstem três opções:
+                        <ul type="circle">
+                            <li>
+                                auto - faz o dowload de todas as informações do áudio 
+                                assim que o site é iniciado
+                                 e acaba deixando o site ainda mais pesado
+                            </li>
+                            <li>metadata - faz o dowload de algumas informações do áudio quando o site é iniciado</li>
+                            <li>none - não faz o dowload das informações do áudio quando o site é iniciado</li>
+                        </ul>
+                    </li>
+                    <li>controls - cria o botão para iniciar o áudio</li>
+                    <li>loop - faz o áudio iniciar novamente quando acabar de ser tocado</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <p><strong>Exemplo na prática:</strong></p>
+    <audio preload="metadata" controls loop>
+        <source src="audio/Born_a_Rockstar.mp3" type="audio/mpeg">
+        <p>Infelizmente seu navegador não consegue reproduzir áudio.
+            <a href="audio/Born_a_Rockstar.mp3">Clique aqui para baixar o arquivo MP3</a>
+        </p>
+    </audio>
+    <hr>
+    <h1>Vídeos</h1>
+    <h2>Vídeos internos</h2>
+    <p>
+        Para colocar no site um vídeo que já está hospedado localmente,
+        utiliza-se a tag &lt;video&gt;. Caso esteja fazendo no VS Code,
+        apenas digite 'video' e aparecerá assim: &lt;video src=""&gt;&lt;/video&gt;
+        <p><strong>Exemplo de código:</strong></p>
+        <p>
+            <p>&lt;video width="tamanho_desejado" 
+                poster="imagem.jpeg" 
+                controls 
+                autoplay 
+                loop&gt;</p>
+                <p>&lt;source src="local_do_video.mp4" type="video/mp4"&gt;</p>
+                <p>&lt;source src="local_do_video.mkv" type="video/mkv"&gt;</p>
+                <p>&lt;source src="local_do_video.webm" type="video/webm"&gt;</p>
+                <p>&lt;p&gt;Seu navegador não tem compatibilidade com reprodução de vídeos&lt;/p&gt;</p>
+            <p>&lt;/video&gt;</p>
+        <p><strong>Observações:</strong></p>
+        <ul>
+            <li>Os parâmetros 'width', 'controls', 'poster', 'autoplay' e 'loop' são adicionados manualmente</li>
+            <li>O parâmetro 'width' serve para redimensionar o vídeo no site</li>
+            <li>O parâmetro 'controls' serve para que seja possível dar play no vídeo</li>
+            <li>O parâmetro 'poster' serve para criar uma capa para seu vídeo utilizando uma imagem na mesma pasta do programa</li>
+            <li>O parâmetro 'autoplay' serve para que o vídeo inicie quando o site for iniciado</li>
+            <li>O parâmetro 'loop' serve para que o vídeo rode em loop</li>
+            <li>
+                <strong>É importante colocar vários formatos de vídeo no código</strong>, pois
+                dependendo da máquina, certos tipos de vídeos não irão rodar
+            </li>
+        </ul>
+    </p>
+    <p><strong>Como fica na prática:</strong></p>
+    <p>Este vídeo está hospedado no meu próprio servidor.</p>
+    <video width="500" poster="imagens/borboleta_500.jpeg" controls autoplay loop >
+        <source src="video/Meu-Video2.mp4" type="video/mp4">
+        <source src="video/Meu-Video.mkv" type="video/mkv">
+        <source src="video/Meu-Video.webm" type="video/webm">
+        <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
+    </video>
+    <h2>Vídeos externos do YouTube</h2>
+    <p>
+        Utilizar vídeos externos vão dar menos custo para seu cliente.
+        <p><strong>Como fazer:</strong></p>
+        <p>
+            Para fazer isso, procure um vídeo no YouTube, clique em 'Compartilhar'
+            e clique em 'Incorporar'. Com isso, o YouTube irá gerar um código.
+            Copie e cole no seu programa o código.
+        </p>
+    </p>
+    <p><strong>Como fica na prática:</strong></p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LW0bhKitRBk?si=AOPy9kCTEYerlE2-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

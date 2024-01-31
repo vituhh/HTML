@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outras formatações</title>
+</head>
+<body>
+    <h1>Outras formatações</h1>
+    <hr>
+    <h2>Código-fonte</h2>
+    <p>
+        O comando <code>document.getElementByID('teste')</code> é
+        escrito em linguagem JavaScript. A tag &lt;code&gt; é
+        usada para que todas as letras ocupem espaços iguais, porém,
+        ele não organiza os códigos de forma correta.
+    </p>
+    <code>
+        num = int(input('Digite um número:'))
+        if num % 2 == 0:
+            print('O número {num} é PAR')
+        else:
+            print('O número {num} é ÍMPAR')
+    </code>
+    <p>
+        Para organizar o código de forma mais bonita, utilizamos a
+        tag &lt;pre&gt;
+    </p>
+    <pre>
+        <code>
+    num = int(input('Digite um número:'))
+    if num % 2 == 0:
+        print('O número {num} é PAR')
+    else:
+        print('O número {num} é ÍMPAR')
+    print('Fim do programa')
+        </code>
+    </pre>
+    <hr>
+    <h2>Citações simples</h2>
+    <p>
+        Como diria o pai de um amigo: <q>o computador é um burro muito
+            rápido.</q>
+        Aqui utilizamos a tag &lt;q&gt; para adicionar aspas e 
+        dar sentido a citação.
+    </p>
+    <hr>
+    <h2>Citações completas</h2>
+    <p>Segundo Jeff Noble, no seu livro HTML para Leigos:</p>
+    <blockquote>
+        A diferença entre elementos inline e um bloco de texto
+        é importante. Os elementos HTML neste capítulo descrevem
+        os blocos de texto.
+    </blockquote>
+    <p>
+        Utilizamos a tag &lt;blockquote&gt; para fazer citações completas.
+        Pode-se usar também "blockquote cite='endereço_do_livro'" para
+        que seu programa saiba de onde vêm essa citação
+    </p>
+    <hr>
+    <h2>Abreviações</h2>
+    <p>
+        Estou estudanto <abbr title="HyperText Markup Language">HTML</abbr> 
+        e <abbr title="Cascading Style Sheets">CSS</abbr>. Estou adorando!
+    </p>
+    <p>
+        Utilizamos a tag &lt;abbr&gt; para que o programa saiba o que
+        aquela abreviação significa. Além disso, ao passar o cursor do
+        mouse por cima da abreviação, será mostrado na tela o significado
+        daquela abreviação.
+    </p>
+    <hr>
+    <h2>Texto invertido</h2>
+    <p>
+        <bdo dir="rtl">Estou aprendendo a criar coisas em HTML.</bdo>
+    </p>
+</bdy>
+</html>

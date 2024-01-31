@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com links</title>
+</head>
+<body>
+    <h1>Usando links</h1>
+    <hr>
+    <h2>Usando links externos</h2>
+    <p>
+         Para você adicionar um link externo ao seu site, você utiliza
+        a tag &lt;a href="endereço"&gt;. Para ficar mais fácil, envelope a frase
+        que servirá como âncora para o site externo e digite a.
+    </p>
+    <strong>Exemplo de código:</strong>
+    <p>&lt;p&gt;Você pode acessar o 
+        meu &lt;a href="https://gustavoguanabara.github.io"&gt;repositório público no GitHub&lt;/a&gt;&lt;p&gt;
+    </p>
+    <strong>Exemplos de como fica:</strong>
+    <p>Você pode acessar o 
+        meu <a href="https://gustavoguanabara.github.io">repositório público no GitHub</a>
+    </p>
+    <p>Você também pode acessar o 
+        meu <a href="https://youtube.com/cursoemvideo/">canal gratuito no YouTube</a>
+    </p>
+    <h3>Forma melhor:</h3>
+    <p>
+        Para que, ao clicar na âncora, a aba do seu site não seja sobreposta,
+        digite &lt;a href="endereço" target="_blank" rel="external"&gt;.
+        Com isso, abrirá outra aba.
+    </p>
+    <strong>Exemplo de código:</strong>
+    <p>&lt;p&gt;Você pode acessar o 
+        meu &lt;a href="https://gustavoguanabara.github.io" target="_blank" rel="externa"&gt;repositório público no GitHub&lt;/a&gt;&lt;p&gt;
+    </p>
+    <strong>Exemplos de como fica:</strong>
+    <p>Você pode acessar o 
+        meu <a href="https://gustavoguanabara.github.io" target="_blank" rel="externa">repositório público no GitHub</a>
+    </p>
+    <p>Você também pode acessar o 
+        meu <a href="https://youtube.com/cursoemvideo/" target="_blank" rel="external">canal gratuito no YouTube</a>
+    </p>
+    <hr>
+    <h2>Usando links internos</h2>
+    <p>
+        Para que você crie uma âncora para uma página interna do seu site,
+        é necessário que a página que será acessada esteja na mesma pasta
+        da primeira. 
+        <p>O código fica da seguinte maneira na primeira página:</p>
+        <p>
+            &lt;p&gt;Esta é a primeira página do site. Se você quiser, pode acessar
+            também a minha
+            &lt;a href="pag002.html" rel="next"&gt;segunda página&lt;/a&gt;&lt;p&gt;
+        </p>
+        <p>O rel="next" indica que está indo para uma página seguinte</p>
+    </p>
+    <p>
+        Enquanto na segunda página o código fica assim:
+        <p>
+            &lt;a href="index.html" rel="prev"&gt;Voltar para a primeira página&lt;/a&gt;
+        </p>
+        <p>O rel="prev" indica voltar para página anterior</p>
+    </p>
+    <p><strong>Como fica na prática:</strong></p>
+    <p>
+        Esta é a primeira página do site. Se você quiser, pode acessar
+        também a minha
+        <a href="pag002.html" target="_self" rel="next">segunda página</a>
+    </p>
+    <p>
+        Você também pode acessar a nossa <a href="noticias/pag003.html" target="_self" rel="next">página de notícias</a>
+    </p>
+    <hr>
+    <h2>Links para dowload</h2>
+    <ul>
+        <li><a href="livro/Trabalho de História da Arte.pdf" download="Trabalho de História da Arte.pdf" type="application/pdf">Baixar livro em PDF</a></li>
+        <li><a href="livro/livro.zip.zip" download="livro.zip.zip" type="application/zip">Livro compactado em ZIP</a></li>
+    </ul>
+</body>
+</html>
